@@ -23,6 +23,7 @@ public class QuartzServiceImpl implements QuartzService {
     @Override
     public void addJob(String jName, String jGroup, String tName, String tGroup, String cron,String className) {
         try {
+
             Class c=Class.forName("com.example.demoquartz2.quartz2."+className);
             JobDetail jobDetail = JobBuilder.newJob(c)
                     .withIdentity(jName, jGroup)
