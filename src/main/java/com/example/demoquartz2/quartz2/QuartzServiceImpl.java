@@ -25,6 +25,7 @@ public class QuartzServiceImpl implements QuartzService {
         try {
 
             Class c=Class.forName("com.example.demoquartz2.quartz2."+className);
+
             JobDetail jobDetail = JobBuilder.newJob(c)
                     .withIdentity(jName, jGroup)
                     .build();
